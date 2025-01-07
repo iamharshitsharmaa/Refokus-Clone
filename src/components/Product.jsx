@@ -12,7 +12,10 @@ const Product = ({elem}) => {
           <p className="mb-7 font-semibold">
             {elem.description}
           </p>
-          <Button />
+          <div className="flex gap-3 items-center">
+          {elem.live && <Button />}
+          {elem.case && <Button />}
+          </div>
         </div>
       </div>
     </div>
