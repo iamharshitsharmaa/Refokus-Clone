@@ -29,7 +29,7 @@ const Marquees = () => {
   ];
 
   return (
-    <div>
+    <div className="py-10 bg-[#1C1C1C]">
       {images.map((item) => (
         <Marquee imagesUrl = {item} />
       ))}
