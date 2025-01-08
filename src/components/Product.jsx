@@ -14,7 +14,7 @@ const Product = ({elem}) => {
           </p>
           <div className="flex gap-3 items-center">
           {elem.live && <Button />}
-          {elem.case && <Button />}
+          {elem.case && <Button tittle = "Case Study" />}
           </div>
         </div>
       </div>
