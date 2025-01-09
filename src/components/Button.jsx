@@ -2,10 +2,10 @@ import React from "react";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const Button = ({ tittle = "Get Started" }) => {
+const Button = ({ tittle = "Get Started", onClick }) => {
   return (
     <motion.div
-      className="w-36 bg-zinc-100 rounded-full px-4 py-1 text-zinc-900 flex items-center gap-3 hover:cursor-pointer"
+      className="w-auto max-w-full bg-zinc-100 rounded-full px-6 py-2 text-zinc-900 flex items-center gap-3 justify-center hover:cursor-pointer transition-all duration-200"
       whileHover={{
         scale: 1.05,
         backgroundColor: "#e0e0e0",
@@ -14,13 +14,16 @@ const Button = ({ tittle = "Get Started" }) => {
       whileTap={{
         scale: 0.95,
       }}
+      onClick={onClick} // Makes the button interactive
+      role="button" // Adds accessibility
+      tabIndex={0} // Allows keyboard navigation
     >
-      <span className="text-sm font-normal">{tittle}</span>
+      <span className="text-sm font-medium truncate">{tittle}</span>
       <motion.div
         whileHover={{ x: 5 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        <BsArrowReturnRight className="text-sm mt-1" />
+        <BsArrowReturnRight className="text-base mt-0.5" />
       </motion.div>
     </motion.div>
   );

@@ -4,22 +4,24 @@ import Card from "./Card";
 const Cards = () => {
   const content = [
     { header: "Up Next: News", title: "Insights and behind the scenes" },
-    { header: "Get In Touch", title: "Let's get to it, together. " },
+    { header: "Get In Touch", title: "Let's get to it, together." },
   ];
 
   return (
     <div className="w-full bg-[#1C1C1C]">
-      <div className="max-w-screen-xl mx-auto py-20 flex gap-2">
+      <div className="max-w-screen-xl mx-auto py-20 px-5 grid gap-2 lg:grid-cols-3">
+        {/* Card 1 */}
         <Card
-          width={"basis-1/3"}
+          width="lg:col-span-1"
           start={false}
           para={true}
           hover={false}
           header={content[0].header}
           title={content[0].title}
         />
+        {/* Card 2 */}
         <Card
-          width={"basis-2/3"}
+          width="lg:col-span-2"
           start={true}
           para={false}
           hover={true}
