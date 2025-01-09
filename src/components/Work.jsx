@@ -40,20 +40,69 @@ const Work = () => {
       isActive: false,
     },
   ]);
-  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("Page scroll: ", latest);
+  scrollYProgress.on("change", (data) => {
+    function showImage(arr) {
+      setImages((prev) => {
+        return prev.map((item, index) => {
+          return arr.indexOf(index) === -1
+            ? { ...item, isActive: false }
+            : { ...item, isActive: true };
+        });
+      });
+    }
+
+    switch (Math.floor(data * 100)) {
+      case 0:
+        console.log(1);
+        showImage([]);
+        break;
+      case 2:
+        console.log(1, 2);
+        showImage([0]);
+        break;
+      case 3:
+        console.log(1, 2, 3);
+        showImage([0, 1]);
+        break;
+      case 4:
+        console.log(1, 2, 3, 4);
+        showImage([0, 1, 2]);
+        break;
+      case 5:
+        console.log(1, 2, 3, 4, 5);
+        showImage([0, 1, 2, 3]);
+        break;
+      case 6:
+        console.log(1, 2, 3, 4, 5, 6);
+        showImage([0, 1, 2, 3, 4]);
+        break;
+      case 7:
+        console.log(1, 2, 3, 4, 5, 6,7);
+        showImage([0, 1, 2, 3, 4 ,5]);
+        break;
+    }
   });
+
   return (
     <div className="w-full">
       <div className="max-w-screen-xl mx-auto text-center relative">
         <h1 className="text-[30vw] font-regular select-none leading-none tracking-tight text-white">
           Work
         </h1>
-       <div className="absolute top-[20vh] left-[30vw] w-full h-full hidden">
-       <img className="h-60 w-60 " src="https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef09178195ce0073e38f3_Refokus%20Tools-1.png"/>
-       </div>
+        <div className="top-0 w-full h-full">
+          {images.map(
+            (elem, index) =>
+              elem.isActive && (
+                <img
+                  className="absolute -translate-x-[50%] -translate-y-[50%] w-60 h-60"
+                  style={{ top: elem.top, left: elem.left }}
+                  src={elem.url}
+                />
+              )
+          )}
+        </div>
       </div>
     </div>
   );
