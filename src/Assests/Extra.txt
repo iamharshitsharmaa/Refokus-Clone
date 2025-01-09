@@ -10,3 +10,23 @@ const Button = ({tittle = "Get Started"}) => {
 };
 
 export default Button;
+
+ {isLoading ? (
+        <LoadingPage />
+      ) : (
+        <div className="text-center p-4">
+          <h1 className="text-2xl font-bold">Welcome to My React Project</h1>
+          {/* Your actual content here */}
+        </div>
+      )}
+
+
+       <div className="bg-[#1C1C1C] h-screen w-screen">
+      <Navbar />
+      <Work />
+      <Stripes />
+      <Products />
+      <Marquees />
+      <Cards />
+      <Footer />
+    </div>
