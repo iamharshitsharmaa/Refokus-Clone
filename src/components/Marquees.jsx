@@ -29,9 +29,9 @@ const Marquees = () => {
   ];
 
   return (
-    <div className="py-10 bg-[#1C1C1C]">
-      {images.map((item) => (
-        <Marquee imagesUrl = {item} />
+    <div className="py-10 pt-20 relative w-full overflow-hidden bg-[#1C1C1C]">
+      {images.map((item,index) => (
+        <Marquee key={index} direction={index===0 ? "left" : "right"} imagesUrl = {item} />
       ))}
     </div>
   );
