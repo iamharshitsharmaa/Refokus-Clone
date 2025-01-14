@@ -45,7 +45,7 @@ const Products = () => {
   }
 
   return (
-      <div className="mt-20 relative">
+      <div className=" relative bg-[#1C1C1C]">
           {products.map((elem, index) => (
               <Product key={index} elem={elem} mover={mover} count={index} />
           ))}
