@@ -30,7 +30,7 @@ const App = () => {
         <div className="bg-[#1C1C1C] h-screen w-screen">
       <Navbar />
       <Work />
-      <Stripes />
+      {/* <Stripes /> */}
       <Products />
       <Marquees />
       <Cards />

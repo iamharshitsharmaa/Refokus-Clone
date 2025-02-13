@@ -1,5 +1,5 @@
 import React from "react"
-import Stripe from "./Stripe"
+import Stripe from "../components/Stripe.jsx"
 
 const Stripes = () => {
     const data = [
